@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size:18px;
+    font-family: "Noto Sans", sans-serif;
+    background:#eee;
+}
+a{
+    text-decoration:none;
+}
+ul li{
+    list-style: none;
+}
+/* Navigation */
+.Navigation{
+    width:100%;
+    background: #eee;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+/* menu */
+.menu{
+    display: flex;
+    align-items: center;
+    color:#fff;
+    height:50px;
+    width:90%;
+    margin: auto;
+}
+/* menu-left */
+.menu-left{
+    width:30%;
+    padding:0 5px;
+    height:100%;
+}
+.menu-left ul{
+    height:100%;
+    display: flex;
+    align-items:center;
+    gap:5px;
+    font-weight:500;
+    text-transform:uppercase;
+}
+.menu-left ul li {
+    display: flex;
+    align-items: center;
+    height:100%;
+    padding:0 10px;
+}
+.menu-left ul li a{
+    color:black;
+}
+.menu-left ul li:hover{
+    background:#9c9292;
+    cursor: pointer;
+}
+/* .menu-center */
+.menu-center{
+    width:25%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-center img{
+    width:130px;
+}
+/* .menu-rihgt */
+.menu-rihgt{
+    display: flex;
+    justify-content: end;
+    width:45%;
+    /* background-color:#eee; */
+    height:100%;
+   
+}
+.menu-rihgt ul{
+    display: flex;
+    height:100%;
+    align-items: center;
+    gap:5px;
+}
+.menu-rihgt ul li{
+    display: flex;
+    align-items: center;
+    text-transform:uppercase;
+    height:100%;
+    padding: 0 20px;
+
+}
+.text-search:first-child{
+    height:100%;
+    padding:10px 0;
+}
+.text-search{
+    display: flex;
+    height:100%;
+    border: 1px solid gray;
+    border-radius:10px;
+    overflow: hidden;
+}
+.fa-solid{
+    color: black;
+}
+.text-search input{
+    height:100%;
+    border: none;
+    background:#eee;
+
+}
+.text-search input:focus{
+    outline: none;
+}
+.text-search span{
+    display:flex;
+    align-items: center;
+    padding:0 8px;
+}
+.menu-rihgt ul li a{
+    color: black;
+    font-weight:500;
+}
+.menu-rihgt ul li:hover:not(:first-child){
+     background:#9c9292;
+}
