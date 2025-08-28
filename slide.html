@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zando</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://zandokh.com/image/catalog/assets/app/app-zando-logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- Demo styles -->
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <!-- Demo styles -->
   <style>
     swiper-container {
       width: 100%;
@@ -62,52 +61,15 @@
     }
   </style>
 </head>
+
 <body>
-    <nav class="Navigation">
-        <nav class="menu">
-            <div class="menu-left">
-                <ul>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Boys</a></li>
-                    <li><a href="#">Girls</a></li>
-                </ul>
-            </div>
-            <div class="menu-center">
-                <img src="https://zandokh.com/images/ZANDO-NEW-LOGO-2025.png" alt="">
-            </div>
-            <div class="menu-rihgt">
-                <ul>
-                    <li>
-                        <div class="text-search">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <input type="text" placeholder="Search">
-                        </div>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-bell"></i>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-heart"></i>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">register</a></li>
-                </ul>
-            </div>
-        </nav>
-    </nav>
-    
-    <div class="slide">
-         <!-- Swiper -->
+    <div style="width:90%; height:500px; margin: auto;">
+        <!-- Swiper -->
         <swiper-container class="mySwiper"
          pagination="true"
           pagination-clickable="true"
           navigation="true" 
+          space-between="30"
           centered-slides="true" 
           autoplay-delay="2500" 
           autoplay-disable-on-interaction="false">
@@ -121,14 +83,15 @@
           <swiper-slide><img src="" alt=""></swiper-slide>
           <swiper-slide><img src="" alt=""></swiper-slide>
           <div class="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48">
+            <svg viewBox="0 0 48 48">
               <circle cx="24" cy="24" r="20"></circle>
-           </svg>
+            </svg>
             <span></span>
           </div>
         </swiper-container>
+    </div>
 
-          <!-- Swiper JS -->
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->
@@ -143,6 +106,6 @@
       progressContent.textContent = `${Math.ceil(time / 1000)}s`;
     });
   </script>
-    </div>
 </body>
+
 </html>
