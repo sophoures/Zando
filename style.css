@@ -158,12 +158,11 @@ ul li{
     font-weight: bold;
     font-size:18px;
     color:#ffff;
-    box-shadow: rgba(198, 203, 206, 0.881) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: rgba(241, 243, 244, 0.984) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     outline: none;
+    transition: all 0.3s ease;
 }
-/* .btn button:hover{
-    background-image:repeating-linear-gradient(45deg, #1023a0, #0b0b0b 10px, #c7252d 10px, #92278b 20px);
-    cursor: pointer;
-   
-   
-} */
+.btn button:hover{
+    transform:translateY(-8px);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
