@@ -1,154 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zando</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNE1iXOKgbdq2hAw7jJdH2ivTgJRI3Xj_7kw&s">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- Demo styles -->
-  <style>
-    swiper-container {
-      width: 100%;
-      height: 100%;
-    }
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNE1iXOKgbdq2hAw7jJdH2ivTgJRI3Xj_7kw&s"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Demo styles -->
+    <style>
+      swiper-container {
+        width: 100%;
+        height: 100%;
+      }
 
-    swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      overflow: hide;
-      object-fit: cover;
-    }
+      swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: hide;
+        object-fit: cover;
+      }
 
-    .autoplay-progress {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      z-index: 10;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: var(--swiper-theme-color);
-    }
+      .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+      }
 
-    .autoplay-progress svg {
-      --progress: 0;
-      position: absolute;
-      left: 0;
-      top: 0px;
-      z-index: 10;
-      width: 100%;
-      height: 100%;
-      stroke-width: 4px;
-      stroke: var(--swiper-theme-color);
-      fill: none;
-      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-      stroke-dasharray: 125.6;
-      transform: rotate(-90deg);
-    }
-  </style>
-</head>
-<body>
+      .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+      }
+
+      .append-buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .append-buttons button {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #007aff;
+        color: #007aff;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
     <nav class="Navigation">
-        <nav class="menu">
-            <div class="menu-left">
-                <ul>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Boys</a></li>
-                    <li><a href="#">Girls</a></li>
-                </ul>
-            </div>
-            <div class="menu-center">
-                <img src="https://zandokh.com/images/ZANDO-NEW-LOGO-2025.png" alt="">
-            </div>
-            <div class="menu-rihgt">
-                <ul>
-                    <li>
-                        <div class="text-search">
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <input type="text" placeholder="Search">
-                        </div>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-bell"></i>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-heart"></i>
-                    </a></li>
-                    <li><a href="#">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">register</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="menu container-width">
+        <div class="menu-left">
+          <ul>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Boys</a></li>
+            <li><a href="#">Girls</a></li>
+          </ul>
+        </div>
+        <div class="menu-center">
+          <img
+            src="https://zandokh.com/images/ZANDO-NEW-LOGO-2025.png"
+            alt=""
+          />
+        </div>
+        <div class="menu-rihgt">
+          <ul>
+            <li>
+              <div class="text-search">
+                <span>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" placeholder="Search" />
+              </div>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-regular fa-heart"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </a>
+            </li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">register</a></li>
+          </ul>
+        </div>
+      </nav>
     </nav>
-    
-    <div class="slide">
-         <!-- Swiper -->
-        <swiper-container class="mySwiper"
-          centered-slides="true" 
-          autoplay-delay="2000" 
-          autoplay-disable-on-interaction="false">
-          <swiper-slide>
-            <div class="item-slide">
-                <img src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Augst/Pchum%20Ben/70OFFPB_Main%20(2160x1066)0.jpg" alt="">
-                <div class="btn">
-                    <button>Shop Men</button>
-                    <button>shop women</button>
-                </div>
+    <div class="slide container-width">
+      <!-- Swiper -->
+      <swiper-container
+        class="mySwiper"
+        centered-slides="true"
+        autoplay-delay="2000"
+        autoplay-disable-on-interaction="false"
+      >
+        <swiper-slide>
+          <div class="item-slide">
+            <img
+              src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Augst/Pchum%20Ben/70OFFPB_Main%20(2160x1066)0.jpg"
+              alt=""
+            />
+            <div class="btn">
+              <button>Shop Men</button>
+              <button>shop women</button>
             </div>
-        </swiper-slide>
-         <swiper-slide>
-            <div class="item-slide">
-                <img src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Augst/10%20year/10Year80OFF%202160x1066.jpg" alt="">
-                <div class="btn">
-                    <button>Shop Man</button>
-                    <button>shop women</button>
-                </div>
-            </div>
-        </swiper-slide>
-          <div class="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48">
-              <circle cx="24" cy="24" r="20"></circle>
-           </svg>
-            <span></span>
           </div>
-        </swiper-container>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="item-slide">
+            <img
+              src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Augst/10%20year/10Year80OFF%202160x1066.jpg"
+              alt=""
+            />
+            <div class="btn">
+              <button>Shop Man</button>
+              <button>shop women</button>
+            </div>
+          </div>
+        </swiper-slide>
+        <div class="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
+        </div>
+      </swiper-container>
 
-          <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
+      <!-- Initialize Swiper -->
+      <script>
+        const progressCircle = document.querySelector(".autoplay-progress svg");
+        const progressContent = document.querySelector(
+          ".autoplay-progress span"
+        );
 
-    const swiperEl = document.querySelector("swiper-container");
-    swiperEl.addEventListener("autoplaytimeleft", (e) => {
-      const [swiper, time, progress] = e.detail;
-      progressCircle.style.setProperty("--progress", 1 - progress);
-      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-    });
-  </script>
+        const swiperEl = document.querySelector("swiper-container");
+        swiperEl.addEventListener("autoplaytimeleft", (e) => {
+          const [swiper, time, progress] = e.detail;
+          progressCircle.style.setProperty("--progress", 1 - progress);
+          progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        });
+      </script>
     </div>
-</body>
+
+    <!-- brand -->
+    <section class="brand container-width">
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/zando/ZandoNoBorder.jpg"
+          alt=""
+        />
+      </div>
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/ten11/Ten11NoBorder.jpg"
+          alt=""
+        />
+      </div>
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/Routine/RoutineNoBorder.jpg"
+          alt=""
+        />
+      </div>
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/gatoni/gatoni-logo.png"
+          alt=""
+        />
+      </div>
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/gatoni/gatoni-logo.png"
+          alt=""
+        />
+      </div>
+      <div class="box-brand">
+        <img
+          src="https://zandokh.com/image/catalog/logo/sisburma/2025-07-22%2012.02.25.jpg"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <div class="life-style container-width">
+      <div class="box-life-style">
+        <img
+          src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Category%20lifestyle,%20sportlife,%20smartcasual/July/3.jpg"
+          alt=""
+        />
+      </div>
+      <div class="box-life-style">
+        <img
+          src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Category%20lifestyle,%20sportlife,%20smartcasual/July/1.jpg"
+          alt=""
+        />
+      </div>
+      <div class="box-life-style">
+        <img
+          src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Category%20lifestyle,%20sportlife,%20smartcasual/July/2.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="life-style-button container-width">
+      <div class="life-style-button-box">
+        <img
+          src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Category%20lifestyle,%20sportlife,%20smartcasual/July/4.jpg"
+          alt=""
+        />
+      </div>
+      <div class="life-style-button-box">
+        <img
+          src="https://zandokh.com/image/catalog/banner/2025/ZANDO/Category%20lifestyle,%20sportlife,%20smartcasual/July/5.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- .productTopView -->
+    <div class="productTopView container-width">
+      <div class="title">
+        <h1>Tradition Meets Style - Pchum Ben🪔</h1>
+        <a href="#">
+          <h2>Shop More</h2>
+        </a>
+      </div>
+      <div class="react-multi-carousel-list">
+        <swiper-container
+          class="mySwiper"
+          slides-per-view="3"
+          centered-slides="false"
+          space-between="30"
+          pagination="true"
+          pagination-type="fraction"
+          navigation="true"
+        >
+          <!-- card1 -->
+          <swiper-slide class="card">
+            <div>
+              <div class="img-box">
+                <span class="dis">10%</span>
+                <img
+                  src="https://zandokh.com/image/cache/catalog/products/2025-08/21225061329/ZANDO200820258711-cr-450x672.jpg"
+                  alt=""
+                />
+                <span class="txt-brand">ROU</span>
+              </div>
+              <div class="descriptoin">
+                <span class="txt">
+                  <h2>US $16.59</h2>
+                  <p>Regular T-Shirt</p>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </span>
+                <span class="icon"> <i class="fa-regular fa-heart"></i></span>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- card2 -->
+          <swiper-slide class="card">
+            <div>
+              <div class="img-box">
+                <span class="dis">30%</span>
+                <img
+                  src="https://zandokh.com/image/cache/catalog/products/2025-09/21225051317/ZANDO190820257884-cr-450x672.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="descriptoin">
+                <span class="txt">
+                  <h2>US $14.59</h2>
+                  <p>Mesh Jersey T-Shirts</p>
+                  <ul class="two">
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </span>
+
+                <span class="icon"> <i class="fa-regular fa-heart"></i></span>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- card3 -->
+          <swiper-slide class="card">
+            <div>
+              <div class="img-box">
+                <span class="dis">50%</span>
+                <img
+                  src="https://zandokh.com/image/cache/catalog/products/2025-08/22225061626%20Replace/ZD__0254-cr-450x672.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="descriptoin">
+                <span class="txt">
+                  <h2>US $18.95</h2>
+                  <p>Midi Pleats Skirt</p>
+                  <ul class="three">
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </span>
+
+                <span class="icon"> <i class="fa-regular fa-heart"></i></span>
+              </div>
+            </div>
+          </swiper-slide>
+          <!-- card4 -->
+          <swiper-slide class="card">
+            <div>
+              <div class="img-box">
+                <span class="dis">70%</span>
+                <img
+                  src="https://zandokh.com/image/cache/catalog/products/2025-08/22225061632/ZANDO120820256388-cr-450x672.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="descriptoin">
+                <span class="txt">
+                  <h2>US $16.95</h2>
+                  <p>Double Fitted Knitted With Shirt</p>
+                  <ul class="four">
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </span>
+
+                <span class="icon"> <i class="fa-regular fa-heart"></i></span>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer container-width">
+      <!-- div1 -->
+      <div class="box1">
+        <h1 class="text">ZANDO</h1>
+        <img
+          src="https://zandokh.com/image/catalog/logo/qr_code_app.png"
+          alt=""
+        />
+      </div>
+      <!-- div2 -->
+      <div class="box2">
+        <h1>LOYALTY</h1>
+        <a href="#">
+          <i class="fa-solid fa-heart-circle-check"></i>
+          Membership
+        </a>
+      </div>
+      <!-- div3 -->
+      <div class="box1">
+        <h1>follow us</h1>
+        <ul>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-facebook"></i>
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-brands fa-instagram"></i>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-tiktok"></i>
+              Tiktok
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-youtube"></i>
+              Youtube
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- div4 -->
+      <div class="box2">
+        <h1>CUSTOMER SERVICES</h1>
+        <ul>
+          <li>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shield-question-mark-icon lucide-shield-question-mark"
+              >
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/>
+                <path d="M12 17h.01" />
+              </svg>
+              Online exchene Policy
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-shield-halved"></i>
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-message"></i>
+              FAQs & guides
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-location-dot"></i>
+              Find a store
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- div5 -->
+      <div class="box2">
+        <h1>Contact Us</h1>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-envelope"></i>
+              info@Zando.com
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-phone"></i>
+              (+855)088 3278 109
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-phone"></i>
+              (+855)088 3278 109
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-telegram"></i>
+              Telegram
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- div6 -->
+      <div class="box3">
+        <h1 class="text">WE ACCEPT</h1>
+        <img src="https://zandokh.com/image/catalog/logo/web-footer/We-accept-payment%E2%80%93for-web-footer-1.png" alt="">
+      </div>
+    </footer>
+    <div
+      class="container-width"
+      style="display: flex; justify-content: end; margin: 25px auto"
+    >
+      © 2015 - 2025 Zando. All rights reserved
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </html>
